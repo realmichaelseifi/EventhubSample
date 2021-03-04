@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using Azure.Messaging.EventHubs;
 using Azure.Messaging.EventHubs.Producer;
@@ -17,9 +18,21 @@ namespace EventhubSampleWriter
             Console.WriteLine("Hello World!");
             await using (var producerCLient = new EventHubProducerClient(connectionString: connectionString, eventHubName: eventHub))
             {
-                // create a batch of events
+                // CREATE A BATCH OF EVENTS
                 using EventDataBatch eventDataBatch = await producerCLient.CreateBatchAsync();
 
+                // ADD SOME EVNETS TO THE BATCH
+                eventDataBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes("my first event")));
+                eventDataBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes("my second event")));
+                eventDataBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes("my third event")));
+                eventDataBatch.TryAdd(new EventData(Encoding.UTF8.GetBytes("my fourth event")));
+
+                // SEND THE BATCH TO THE HUB
+                await producerCLient.SendAsync(eventDataBatch);
+
+
+                // WRITE TO LOG
+                Console.WriteLine( $"{eventDataBatch.Count} events have been sent to the hub!");
 
             }
         }
