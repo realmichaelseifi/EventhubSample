@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventhubSampleWriter", "Eve
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Terraform", "Terraform", "{3D38C089-43E5-44AC-8FCD-D72101F7F606}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4D1441B8-1B43-4A42-816A-6B341EF0160A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EFD51CA6-B043-4354-A372-23CA700397A0} = {4D1441B8-1B43-4A42-816A-6B341EF0160A}
+		{E4F00989-A7A3-4327-887D-773190809619} = {4D1441B8-1B43-4A42-816A-6B341EF0160A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {180930ED-ABEB-46E3-B976-EA532DAACB91}
