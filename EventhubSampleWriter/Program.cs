@@ -8,8 +8,8 @@ namespace EventhubSampleWriter
 {
     class Program
     {
-        private const string connectionString = "";
-        private const string eventHub = "";
+        private const string connectionString = "<event_hub_connection_string>";
+        private const string eventHub = "<event_hub_name>";
 
 
         static async Task Main(string[] args)
