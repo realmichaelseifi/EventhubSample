@@ -9,9 +9,12 @@ namespace EventhubSampleWriter
 {
     class Program
     {
-        private const string connectionString = "<event_hub_connection_string>";
-        private const string eventHub = "<event_hub_name>";
+        //private const string connectionString = "<event_hub_connection_string>";
+        //private const string eventHub = "<event_hub_name>";
 
+        // GETTING CONFIGURATIONS FROM A STATIC CONFIG FILE
+        private static string connectionString = Config.ConnectionString;
+        private static string eventHub = Config.EventHubName;
 
         static async Task Main(string[] args)
         {

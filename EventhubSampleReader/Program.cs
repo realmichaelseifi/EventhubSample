@@ -17,7 +17,7 @@ namespace EventhubSampleReader
         //private const string blobContainerName = "<blobCOntainerName>";
 
 
-        // getting configurations from a static config file
+        // GETTING CONFIGURATIONS FROM A STATIC CONFIG FILE
         private static string connectionString = Config.ConnectionString;
         private static string eventHub = Config.EventHubName;
         private static string blobStorageConnectionString = Config.BLobStorageConnectionString;
