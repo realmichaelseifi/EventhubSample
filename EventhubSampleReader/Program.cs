@@ -19,7 +19,7 @@ namespace EventhubSampleReader
 
         // GETTING CONFIGURATIONS FROM A STATIC CONFIG FILE
         private static string connectionString = Config.ConnectionString;
-        private static string eventHub = Config.EventHubName;
+        private static string eventHubName = Config.EventHubName;
         private static string blobStorageConnectionString = Config.BLobStorageConnectionString;
         private static string blobContainerName = Config.BlobContainerName;
 
@@ -36,7 +36,7 @@ namespace EventhubSampleReader
 
             // CREATE EVENT PROCESSOR
             EventProcessorClient eventProcessorClient = 
-                new EventProcessorClient(blobContainerClient, consumerGroup, connectionString, eventHub);
+                new EventProcessorClient(blobContainerClient, consumerGroup, connectionString, eventHubName);
 
             // REGISTER HANDLERS
             eventProcessorClient.ProcessEventAsync += EventProcessorClient_ProcessEventAsync;
